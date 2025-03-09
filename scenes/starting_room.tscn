@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy27cr0hovf31"]
+
+[ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="1_7hvcc"]
+[ext_resource type="FontFile" uid="uid://cq8u47ai6dbdr" path="res://font/PirataOne-Regular.ttf" id="1_oaisi"]
+[ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="2_oaisi"]
+[ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="3_ii2mg"]
+[ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="4_1v1w4"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="5_fk4dj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hvcc"]
+font = ExtResource("1_oaisi")
+font_size = 120
+font_color = Color(0.294118, 0.14902, 0.117647, 1)
+
+[node name="BaseRoom" type="Node2D"]
+
+[node name="Title" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Title"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 384.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Title/CenterContainer"]
+layout_mode = 2
+text = "Cloak and Dagger"
+label_settings = SubResource("LabelSettings_7hvcc")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boundaries" parent="." instance=ExtResource("1_7hvcc")]
+
+[node name="Floor" type="Sprite2D" parent="."]
+scale = Vector2(8, 6)
+texture = ExtResource("2_oaisi")
+
+[node name="Cloak" parent="." instance=ExtResource("3_ii2mg")]
+position = Vector2(-321, 140)
+
+[node name="Doorway" parent="." instance=ExtResource("4_1v1w4")]
+position = Vector2(304, 140)
+
+[node name="Effects" parent="." instance=ExtResource("5_fk4dj")]

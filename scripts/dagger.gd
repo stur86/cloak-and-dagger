@@ -18,6 +18,11 @@ func _enter_tree() -> void:
 	$DaggerBody.rotation = 0.0
 	set_physics_process(true)
 	
+	ShadowMaster.on_doorway_enter.connect(self._on_player_victory)
+
+func _on_player_victory(_pos: Vector2) -> void:
+	set_physics_process(false)
+
 func _physics_process(delta: float) -> void:
 	
 	if attack_distance == null:

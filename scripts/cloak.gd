@@ -16,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 
-	if move_and_slide():
+	if move_and_slide() and is_alive:
 		var n = get_slide_collision_count()
 		for i in range(n):
 			var c = get_slide_collision(i)

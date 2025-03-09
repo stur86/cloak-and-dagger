@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cloak and Dagger"
-run/main_scene="uid://coy0fg6f71ike"
+run/main_scene="uid://mi4dakkfiwpc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

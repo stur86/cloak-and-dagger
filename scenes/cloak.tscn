@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctdqotxlpljdn"]
+[gd_scene load_steps=4 format=3 uid="uid://ctdqotxlpljdn"]
 
 [ext_resource type="Script" uid="uid://nmxhrltgqfyt" path="res://scripts/cloak.gd" id="1_781ej"]
 [ext_resource type="Texture2D" uid="uid://dhk1pjj02hthw" path="res://sprites/cloak.png" id="2_hwq2l"]
+[ext_resource type="AudioStream" uid="uid://dvgvt8b1midnr" path="res://sounds/squish.wav" id="3_hwq2l"]
 
 [node name="Cloak" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 30
@@ -13,3 +14,6 @@ texture = ExtResource("2_hwq2l")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(26, -58, -26, -58, -53, 54, 53, 54)
+
+[node name="Splatter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hwq2l")

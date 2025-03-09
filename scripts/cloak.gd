@@ -23,3 +23,4 @@ func _physics_process(_delta: float) -> void:
 			if c.get_collider().is_in_group("Daggers"):
 				ShadowMaster.on_cloak_stabbed.emit(global_position)
 				is_alive = false
+				$Splatter.play()

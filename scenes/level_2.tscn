@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bajmpqtbpkf6i"]
+
+[ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="1_y0kc7"]
+[ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="2_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="3_6cvei"]
+[ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="4_que50"]
+[ext_resource type="PackedScene" uid="uid://20v5l8owq7ur" path="res://scenes/wall_and_shadow.tscn" id="5_hey2k"]
+[ext_resource type="PackedScene" uid="uid://hrmipcwbgdks" path="res://scenes/dagger.tscn" id="6_172wr"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="7_g2hoc"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boundaries" parent="." instance=ExtResource("1_y0kc7")]
+
+[node name="Floor" type="Sprite2D" parent="."]
+scale = Vector2(8, 6)
+texture = ExtResource("2_ne2mo")
+
+[node name="Cloak" parent="." instance=ExtResource("3_6cvei")]
+position = Vector2(-395, 266)
+
+[node name="Doorway" parent="." instance=ExtResource("4_que50")]
+position = Vector2(412, -138)
+
+[node name="WallAndShadow" parent="." instance=ExtResource("5_hey2k")]
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="WallAndShadow2" parent="." instance=ExtResource("5_hey2k")]
+position = Vector2(-221, -2)
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="WallAndShadow3" parent="." instance=ExtResource("5_hey2k")]
+position = Vector2(217, 2)
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="Dagger2" parent="." instance=ExtResource("6_172wr")]
+position = Vector2(-120, -200)
+rotation = 1.5708
+
+[node name="Dagger3" parent="." instance=ExtResource("6_172wr")]
+position = Vector2(104, -200)
+rotation = 1.5708
+
+[node name="Dagger4" parent="." instance=ExtResource("6_172wr")]
+position = Vector2(312, -200)
+rotation = 1.5708
+
+[node name="Effects" parent="." instance=ExtResource("7_g2hoc")]

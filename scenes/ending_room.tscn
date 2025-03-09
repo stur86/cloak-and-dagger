@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkcqg1mshuwpn"]
+
+[ext_resource type="FontFile" uid="uid://cq8u47ai6dbdr" path="res://font/PirataOne-Regular.ttf" id="1_3khqm"]
+[ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="2_nsns4"]
+[ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="3_yu7jo"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="6_t68ct"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hvcc"]
+font = ExtResource("1_3khqm")
+font_size = 120
+font_color = Color(0.294118, 0.14902, 0.117647, 1)
+
+[node name="BaseRoom" type="Node2D"]
+
+[node name="Title" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Title"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 384.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Title/CenterContainer"]
+layout_mode = 2
+text = "You Win"
+label_settings = SubResource("LabelSettings_7hvcc")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boundaries" parent="." instance=ExtResource("2_nsns4")]
+
+[node name="Floor" type="Sprite2D" parent="."]
+scale = Vector2(8, 6)
+texture = ExtResource("3_yu7jo")
+
+[node name="Effects" parent="." instance=ExtResource("6_t68ct")]

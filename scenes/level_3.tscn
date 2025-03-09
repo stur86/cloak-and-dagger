@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwti4eo1n85wy"]
+
+[ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="1_hhfj6"]
+[ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="2_wae8j"]
+[ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="3_ha73p"]
+[ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="4_vcx5n"]
+[ext_resource type="PackedScene" uid="uid://20v5l8owq7ur" path="res://scenes/wall_and_shadow.tscn" id="5_56dhn"]
+[ext_resource type="PackedScene" uid="uid://hrmipcwbgdks" path="res://scenes/dagger.tscn" id="6_ax3dk"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="7_q2dsb"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boundaries" parent="." instance=ExtResource("1_hhfj6")]
+
+[node name="Floor" type="Sprite2D" parent="."]
+scale = Vector2(8, 6)
+texture = ExtResource("2_wae8j")
+
+[node name="Cloak" parent="." instance=ExtResource("3_ha73p")]
+position = Vector2(-395, 266)
+
+[node name="Doorway" parent="." instance=ExtResource("4_vcx5n")]
+position = Vector2(440, 128)
+
+[node name="WallAndShadow2" parent="." instance=ExtResource("5_56dhn")]
+position = Vector2(296, -16)
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="WallAndShadow2" parent="WallAndShadow2" instance=ExtResource("5_56dhn")]
+position = Vector2(-312, 0)
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="WallAndShadow2" parent="WallAndShadow2/WallAndShadow2" instance=ExtResource("5_56dhn")]
+position = Vector2(72, 336)
+shadow_length = 150.0
+shadow_angle = 25.0
+
+[node name="Dagger3" parent="." instance=ExtResource("6_ax3dk")]
+position = Vector2(-296, 136)
+
+[node name="Dagger4" parent="." instance=ExtResource("6_ax3dk")]
+position = Vector2(248, 288)
+rotation = -1.5708
+
+[node name="Effects" parent="." instance=ExtResource("7_q2dsb")]

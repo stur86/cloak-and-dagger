@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mi4dakkfiwpc"]
+
+[ext_resource type="AudioStream" uid="uid://bp82kgvh4kkh8" path="res://sounds/SkulkingAbout.wav" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dy27cr0hovf31" path="res://scenes/starting_room.tscn" id="2_yqjtg"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_uwrxv")
+autoplay = true
+
+[node name="Level" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BaseRoom" parent="Level" instance=ExtResource("2_yqjtg")]

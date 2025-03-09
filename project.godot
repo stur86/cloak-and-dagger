@@ -15,12 +15,20 @@ run/main_scene="uid://t2n67rj68sl8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ShadowMaster="*res://scripts/shadow_master.gd"
+
 [display]
 
 window/size/viewport_width=1024
 window/size/viewport_height=768
 window/size/resizable=false
 window/stretch/mode="viewport"
+
+[global_group]
+
+Player="Player object"
 
 [input]
 
@@ -48,6 +56,12 @@ move_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Doorway"
 
 [rendering]
 

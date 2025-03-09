@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq6pudq4gh34x"]
+
+[ext_resource type="Texture2D" uid="uid://f2dj0cposd55" path="res://sprites/doorway.png" id="1_2aw46"]
+[ext_resource type="Script" uid="uid://c068e7jcxpbhf" path="res://scripts/doorway.gd" id="1_oubnr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy5rx"]
+size = Vector2(40, 75)
+
+[node name="Doorway" type="Area2D"]
+collision_layer = 4
+input_pickable = false
+script = ExtResource("1_oubnr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2aw46")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_hy5rx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0t6l8q7t6hw4"]
+
+[ext_resource type="Texture2D" uid="uid://cbtx3oo4nrk8i" path="res://dagger.png" id="1_37kl0"]
+
+[sub_resource type="GDScript" id="GDScript_8uh7m"]
+script/source = "extends Sprite2D
+
+func _init() -> void:
+	look_at(Vector2(100, 100))
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dagger" type="Sprite2D" parent="."]
+texture = ExtResource("1_37kl0")
+script = SubResource("GDScript_8uh7m")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://287a0bg8uf8m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ont3e"]
+
+[node name="Boundaries" type="Node2D"]
+
+[node name="LWall" type="StaticBody2D" parent="."]
+position = Vector2(-512, 0)
+rotation = 1.5708
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
+shape = SubResource("WorldBoundaryShape2D_ont3e")
+
+[node name="RWall" type="StaticBody2D" parent="."]
+position = Vector2(512, 0)
+rotation = -1.5708
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RWall"]
+shape = SubResource("WorldBoundaryShape2D_ont3e")
+
+[node name="UWall" type="StaticBody2D" parent="."]
+position = Vector2(0, -384)
+rotation = 3.14159
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UWall"]
+shape = SubResource("WorldBoundaryShape2D_ont3e")
+
+[node name="DWall" type="StaticBody2D" parent="."]
+position = Vector2(0, 384)
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DWall"]
+shape = SubResource("WorldBoundaryShape2D_ont3e")

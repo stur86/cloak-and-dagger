@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://20v5l8owq7ur"]
+
+[ext_resource type="PackedScene" uid="uid://bq1x3uo0btmw2" path="res://scenes/wall.tscn" id="1_itgf7"]
+[ext_resource type="Script" uid="uid://bmvfykq51d1ek" path="res://scripts/wall_and_shadow.gd" id="1_jdyf1"]
+[ext_resource type="Texture2D" uid="uid://ch7nbbfm33x84" path="res://sprites/shadow.png" id="3_3fiap"]
+
+[node name="WallAndShadow" type="Node2D"]
+script = ExtResource("1_jdyf1")
+
+[node name="Wall" parent="." groups=["Walls"] instance=ExtResource("1_itgf7")]
+metadata/_edit_lock_ = true
+
+[node name="Shadow" type="Area2D" parent="." groups=["Shadows"]]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shadow"]
+polygon = PackedVector2Array(-64, 64, 64, 64, 64, 164, -64, 164)
+
+[node name="Polygon2D" type="Polygon2D" parent="Shadow"]
+texture = ExtResource("3_3fiap")
+polygon = PackedVector2Array(-64, 64, 64, 64, 64, 164, -64, 164)

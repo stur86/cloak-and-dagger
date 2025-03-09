@@ -1,43 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://t2n67rj68sl8"]
 
 [ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="1_7hb5d"]
+[ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="1_hy5rx"]
 [ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="2_ont3e"]
 [ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="3_hy5rx"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ont3e"]
 
 [node name="BaseRoom" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Boundaries" type="Node2D" parent="."]
-
-[node name="LWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(-512, 0)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/LWall"]
-shape = SubResource("WorldBoundaryShape2D_ont3e")
-
-[node name="RWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(512, 0)
-rotation = -1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/RWall"]
-shape = SubResource("WorldBoundaryShape2D_ont3e")
-
-[node name="UWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(0, -384)
-rotation = 3.14159
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/UWall"]
-shape = SubResource("WorldBoundaryShape2D_ont3e")
-
-[node name="DWall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(0, 384)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/DWall"]
-shape = SubResource("WorldBoundaryShape2D_ont3e")
+[node name="Boundaries" parent="." instance=ExtResource("1_hy5rx")]
 
 [node name="Floor" type="Sprite2D" parent="."]
 scale = Vector2(8, 6)

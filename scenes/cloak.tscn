@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctdqotxlpljdn"]
+
+[ext_resource type="Script" uid="uid://nmxhrltgqfyt" path="res://scenes/cloak.gd" id="1_781ej"]
+[ext_resource type="Texture2D" uid="uid://dhk1pjj02hthw" path="res://sprites/cloak.png" id="2_hwq2l"]
+
+[node name="Cloak" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_781ej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hwq2l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(26, -58, -26, -58, -53, 54, 53, 54)

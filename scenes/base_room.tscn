@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://t2n67rj68sl8"]
+
+[ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="1_7hb5d"]
+[ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="2_ont3e"]
+
+[node name="BaseRoom" type="Node2D"]
+
+[node name="Floor" type="Sprite2D" parent="."]
+scale = Vector2(8, 6)
+texture = ExtResource("1_7hb5d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Cloak" parent="." instance=ExtResource("2_ont3e")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f2dj0cposd55"
-path="res://.godot/imported/doorway.png-dd16b790b902458cb8def88cc8ac0251.ctex"
+uid="uid://ch7nbbfm33x84"
+path="res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://doorway.png"
-dest_files=["res://.godot/imported/doorway.png-dd16b790b902458cb8def88cc8ac0251.ctex"]
+source_file="res://sprites/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"]
 
 [params]
 

@@ -36,7 +36,7 @@ func _patrol(delta: float) -> void:
 	if $DaggerBody/RayCast2D.is_colliding():
 		var b: Node2D = $DaggerBody/RayCast2D.get_collider()
 		# Is it the player?
-		if b and b.is_in_group("Player"):
+		if b and b.is_in_group("Player") and b.is_alive:
 			var p = $DaggerBody/RayCast2D.get_collision_point()
 			var d = (p-global_position).length()
 			attack_distance = d

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cloak and Dagger"
-run/main_scene="uid://t2n67rj68sl8"
+run/main_scene="uid://coy0fg6f71ike"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -31,6 +31,7 @@ window/stretch/mode="viewport"
 Player="Player object"
 Walls=""
 Shadows=""
+Daggers=""
 
 [input]
 

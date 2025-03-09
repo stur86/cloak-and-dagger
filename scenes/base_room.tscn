@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://t2n67rj68sl8"]
+[gd_scene load_steps=6 format=3 uid="uid://t2n67rj68sl8"]
 
 [ext_resource type="Texture2D" uid="uid://b8crxbpyia50e" path="res://sprites/floor.png" id="1_7hb5d"]
 [ext_resource type="PackedScene" uid="uid://287a0bg8uf8m" path="res://scenes/boundaries.tscn" id="1_hy5rx"]
 [ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="2_ont3e"]
 [ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="3_hy5rx"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="5_b8der"]
 
 [node name="BaseRoom" type="Node2D"]
 
@@ -19,3 +20,5 @@ texture = ExtResource("1_7hb5d")
 
 [node name="Doorway" parent="." instance=ExtResource("3_hy5rx")]
 position = Vector2(274, 140)
+
+[node name="Effects" parent="." instance=ExtResource("5_b8der")]

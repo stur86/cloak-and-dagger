@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgko4hvehk2ru"]
+
+[ext_resource type="Script" uid="uid://bdd2nb3lib1yr" path="res://scripts/effects.gd" id="1_d7js4"]
+[ext_resource type="Shader" uid="uid://dxiqn866v1hgt" path="res://shaders/circle_effect.gdshader" id="1_tctqu"]
+[ext_resource type="Script" uid="uid://lyctdfhgcvyv" path="res://scripts/blood.gd" id="2_d7js4"]
+[ext_resource type="Script" uid="uid://cvcpv2hmqo06x" path="res://scripts/exit.gd" id="3_eendq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdux6"]
+shader = ExtResource("1_tctqu")
+
+[node name="Effects" type="CanvasLayer"]
+script = ExtResource("1_d7js4")
+
+[node name="Blood" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gdux6")
+instance_shader_parameters/center_position = Vector2(500, 100)
+instance_shader_parameters/effect_radius = 0.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.718487, 0.00673524, 2.88785e-07, 1)
+script = ExtResource("2_d7js4")
+
+[node name="Exit" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gdux6")
+instance_shader_parameters/center_position = Vector2(500, 100)
+instance_shader_parameters/effect_color = Color(0.113725, 0.0941176, 0.0901961, 1)
+instance_shader_parameters/effect_radius = 2000.0
+instance_shader_parameters/is_outer = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.294118, 0.14902, 0.117647, 1)
+script = ExtResource("3_eendq")

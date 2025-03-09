@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://hrmipcwbgdks"]
+
+[ext_resource type="Script" uid="uid://dwo4b3yr08chs" path="res://scripts/dagger.gd" id="1_5mald"]
+[ext_resource type="Texture2D" uid="uid://cbtx3oo4nrk8i" path="res://sprites/dagger.png" id="2_phngh"]
+
+[node name="Dagger" type="Node2D"]
+script = ExtResource("1_5mald")
+
+[node name="DaggerBody" type="StaticBody2D" parent="." groups=["Daggers"]]
+collision_layer = 2
+collision_mask = 9
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DaggerBody"]
+texture = ExtResource("2_phngh")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DaggerBody"]
+polygon = PackedVector2Array(48, 0, -13, -8, -13, 8)
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="DaggerBody"]
+target_position = Vector2(1000, 0)
+collision_mask = 9
+collide_with_areas = true
+metadata/_edit_lock_ = true

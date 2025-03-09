@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ctdqotxlpljdn" path="res://scenes/cloak.tscn" id="2_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bq6pudq4gh34x" path="res://scenes/doorway.tscn" id="3_4nkto"]
 [ext_resource type="PackedScene" uid="uid://20v5l8owq7ur" path="res://scenes/wall_and_shadow.tscn" id="5_4nkto"]
-[ext_resource type="Texture2D" uid="uid://cbtx3oo4nrk8i" path="res://sprites/dagger.png" id="6_fcfvj"]
-[ext_resource type="Script" uid="uid://dwo4b3yr08chs" path="res://scripts/dagger.gd" id="6_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://hrmipcwbgdks" path="res://scenes/dagger.tscn" id="6_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://cgko4hvehk2ru" path="res://scenes/effects.tscn" id="7_pa8r4"]
 
-[node name="BaseRoom" type="Node2D"]
+[node name="Level1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -28,27 +28,7 @@ position = Vector2(394, -276)
 shadow_length = 150.0
 shadow_angle = 25.0
 
-[node name="Dagger" type="Node2D" parent="."]
+[node name="Dagger" parent="." instance=ExtResource("6_fcfvj")]
 position = Vector2(-294, -177)
-rotation = 0.785398
-script = ExtResource("6_pa8r4")
 
-[node name="DaggerBody" type="StaticBody2D" parent="Dagger"]
-scale = Vector2(1, 1)
-collision_layer = 2
-collision_mask = 9
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Dagger/DaggerBody"]
-texture = ExtResource("6_fcfvj")
-metadata/_edit_lock_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dagger/DaggerBody"]
-polygon = PackedVector2Array(48, 0, -13, -8, -13, 8)
-metadata/_edit_lock_ = true
-
-[node name="RayCast2D" type="RayCast2D" parent="Dagger/DaggerBody"]
-target_position = Vector2(1000, 0)
-collision_mask = 9
-collide_with_areas = true
-metadata/_edit_lock_ = true
+[node name="Effects" parent="." instance=ExtResource("7_pa8r4")]
